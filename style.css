@@ -1,0 +1,637 @@
+@import url('https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&display=swap');
+
+:root {
+    --font: 'Arsenal', sans-serif;
+    --xanh: #003D82;
+    --vang: #d5d5d5;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-weight: 300;
+    font-size: 1, 6rem;
+    font-family: var(--font);
+    color: var(--vang);
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg,#271471,hsl(278, 74%, 32%));
+}
+
+a {
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--xanh);
+}
+.reset-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.linkplay .link a{
+    background: linear-gradient(8deg,#2c177f,hsl(294, 73%, 29%));
+    border-radius: 50%;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 6px #35013b;
+    transition: all .5s;
+    position: relative;
+}
+.linkplay .link a::after{
+    position: absolute;
+    content: "";
+    width: 150%;
+    height: 150%;
+    border: solid 2px var(--vang);
+    border-radius: 50%;
+    opacity: 0;
+    transition: .5s;
+    transition-delay: .3s;
+}
+.link p {
+    color: #707070;
+    font-weight: 700;
+    transition: all .5s;
+}
+.linkplay .link .active::after, .linkplay .link a:hover:after{
+    opacity: 1;
+    width: 110%;
+    height: 110%;
+}
+
+
+.linkplay .link a:hover,.linkplay .link .active{
+    background: linear-gradient(8deg,#2401ae,hsl(285, 98%, 32%));
+}
+.linkplay .link a:hover p,.linkplay .link .active p{
+    color: var(--vang);
+}
+
+
+header {
+    width: 100%;
+    height: 95px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 5px 10px #1c033aa4;
+    background: linear-gradient(134deg,rgb(83, 11, 128),hsl(278, 94%, 32%));
+    z-index: 20;
+}
+header .main-header{
+    max-width: 920px;
+    margin: 0 auto ;
+}
+header .main-header .top-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+header .main-header .top-header .home{
+
+    margin-right: auto;
+}
+header #btn-menu{
+    background-color: transparent;
+
+    border: none;
+}
+header #btn-menu svg{
+    width: 25px;
+    height: 20px;
+    fill: var(--vang);
+}
+header #btn-menu .mid {
+    transition: opacity 0.1s;
+}
+
+header #btn-menu .top,
+header #btn-menu .bot {
+    transition: transform 0.2s, fill 0.5s;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+.show-menu #btn-menu .mid {
+    opacity: 0;
+}
+
+.show-menu #btn-menu .top {
+    transform: translate(0, 8px) rotate(45deg);
+    fill: red;
+}
+
+.show-menu #btn-menu .bot {
+    transform: translate(0, -8px) rotate(-45deg);
+    fill: red;
+}
+header .home{
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 3px 10px #35013b;
+    border-radius: 50%;
+    transition: .5s;
+    position: relative;
+    background-color: #7e7e7e;
+}
+header .home::before{
+    color: #b6b6b6;
+    content: "ĐIỆN ẢNH HONGKONG";
+    width: max-content;
+    height: 100%;
+    position: absolute;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    left:calc(100% + 60%) ;
+    transition: all .5s;
+}
+header .home:hover::before{
+    color: #ededed;
+}
+header .home img{
+    width: 80%;
+    transition: .5s;
+}
+header .home:hover{
+    background-color: var(--vang);
+}
+header .home::after{
+    content: "";
+    display: block;
+    width: 150%;
+    height: 150%;
+    position: absolute;
+    border: solid 2px var(--vang);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all .5s;
+    transition-delay: .2s;
+}
+header .home:hover::after{
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+}
+header .home:hover img
+{
+    width: 96%;
+}
+/* ----------------------------------Menu Link------------------------------------------------ */
+
+header .menu-link{
+    background: linear-gradient(0deg,rgb(51, 5, 86),hsl(274, 89%, 21%));
+    height: 100vh;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: all 0.2s;
+    position: absolute;
+    right: -100%;
+}
+
+.show-menu .menu-link{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    position: relative;
+    right :0;
+}
+.show-menu header{
+    z-index: 10;
+}
+header .menu-link ul{
+   padding:  20px;
+}
+header .menu-link ul li{
+    margin-top: 20px;
+    /* padding: 10px; */
+   
+    background: linear-gradient(138deg,#4f10a1,hsl(288, 85%, 28%));
+    border-radius: 50px;
+    box-shadow: 0px 5px 10px #431c72a4;
+    border: solid 1px var(--vang);
+}
+header .menu-link ul li a{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    /* background-color: #000000; */
+}
+header .menu-link ul li span{
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--vang);
+}
+
+header+* {
+    margin-top: 90px;
+}
+
+
+.main {
+    padding: 40px 20px;
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main .link {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.tieude {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.play {
+    margin-top: 30px;
+}
+
+.play .playn {
+    background-color: #000000;
+}
+
+.play iframe {
+    /* background-color: aquamarine; */
+    /* margin-top: 30px; */
+    width: 100%;
+    height: 210px;
+    /* max-height: 400px; */
+}
+
+.name {
+    /* background-color: #874d17; */
+    text-align: right;
+    padding-bottom: 50px;
+}
+
+
+.main .sever{
+    /* background-color: #fedfdb; */
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.main .sever .chon, .main .sever a:hover {
+    background: linear-gradient(8deg,#2d10a1,hsl(294, 85%, 28%));
+}
+.main .sever .chon p{
+    color: var(--vang);
+}
+.main .sever a{
+    background: linear-gradient(8deg,#2c177f,hsl(294, 73%, 29%));
+    margin-top: 10px;
+    padding: 10px 40px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 10px #1c033aa4;
+}
+.main .sever a p{
+    font-size: 12px;
+    color: #707070;
+    font-weight: 900;
+    padding: 0;
+    margin: 0;
+    transition: .5s;
+}
+
+.main .sever a:hover p{
+    color: var(--vang);
+}
+/* --------------------------------------------------------- */
+.gtdht {
+    max-width: 920px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
+}
+
+.xemngay {
+    display: flex;
+    justify-content: center;
+}
+
+.xemngay a {
+    background-color: var(--vang);
+    /* padding:50px; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.xemngay span {
+    color: var(--xanh);
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.chiaphim .active {
+    background-color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+.chiaphim{
+    /* background-color: aqua; */
+    padding: 20px 0;
+    padding-top: 0;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 8px;
+}
+.chiaphim a{
+    display: inline-block;
+    background-color: var(--vang);
+    padding: 10px 8px;
+    border-radius: 15px;
+}
+.chiaphim a span{
+    font-size: 10px;
+    font-weight: 700;
+}
+
+/* ----------/------------------------------------------------ */
+.allfilm {
+    /* background-color: aqua; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    padding-bottom: 80px;
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.allfilm a {
+    background: linear-gradient(45deg,#f5c4ff,#e9dbfe,#fffdc1);
+    /* background: linear-gradient(20deg,#4022b8,hsl(294, 78%, 41%)); */
+    padding: 8px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+    /* box-shadow: 0px 2px 4px #313223; */
+}
+.allfilm a div{
+    width: 100%;
+    height: 100%;
+}
+
+.allfilm a img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 7px;
+    box-shadow: 0px 2px 4px #313223;
+    transition: .3s;
+    transition-delay: .3s;
+}
+.allfilm a:hover{
+    padding: 0;
+    border-radius: 0;
+}
+.allfilm a:hover div img{
+    height: 100%;
+    border-radius: 0;
+}
+.allfilm h5 {
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 1.7rem;
+    text-align: center;
+    transition: 0.5s;
+}
+
+footer {
+
+    position: relative;
+    padding: 20px;
+    box-shadow: 0px -2px 10px #1c033aa4;
+}
+footer .linkft{
+    margin-bottom: 40px;
+    /* padding: 0 10%; */
+
+}
+footer .linkft a{
+    display: block;
+    transition: .5s;
+}
+footer .linkft a p{
+    color: var(--vang);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 15px ;
+    transition: 0.5s;
+}
+footer .linkft a:hover{
+    background: linear-gradient(20deg,#2c177f,hsl(294, 73%, 29%));
+    box-shadow: 0px -2px 10px #1c033aa4;
+    border-radius: 30px;
+}
+footer .linkft a:hover p{
+    color: red;
+}
+footer p {
+    /* background-color: #F8EADD; */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.thanbai {
+    max-width: 920px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thanbai h1, .gtdht h2 {
+    font-size: 2.5rem;
+}
+
+.thanbai p, .gtdht p {
+    font-size: 1.6rem;
+    text-align: justify;
+}
+
+.thanbai div, .noidungdht div {
+    display: flex;
+    justify-content: center;
+    background-color: var();
+}
+
+.thanbai img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.gtdht img {
+    max-width: 100%;
+}
+
+.tieudeth {
+    max-width: 920px;
+    /* background-color: aqua; */
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tieudeth h2 {
+    /* text-align: center; */
+    font-size: 2rem;
+    /* background-color: #F8EADD; */
+}
+
+
+
+
+
+@media screen and (min-width :600px) {
+    .play iframe {
+        /* background-color: aquamarine; */
+        margin-top: 30px;
+        width: 100%;
+        height: 400px;
+        /* max-height: 400px; */
+    }
+    .videogt{
+        background-color: #000000;
+        padding: 5px;
+    }
+    .allfilm {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+   
+    
+    footer .linkft{
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+    }
+    footer .linkft a p{
+        font-size: 16px;
+        padding: 15px 50px;
+        border-radius: 30px;
+    }
+}
+
+@media screen and (min-width :960px) {
+    header {
+        position: relative;
+        background: transparent;
+        z-index: 0;
+    }
+    header .home::before{
+        content: "";
+        width: 0;
+    }
+    header .hide-tab{
+        display: none;
+    }
+    header .main-header{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    header .menu-link{
+        clip-path: none;
+        right: 0;
+        position: relative;
+        background: transparent;
+        height: max-content;
+    }
+    header .menu-link ul{
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 25px;
+        padding: 20px 20px 20px 0;
+        background-color: transparent;
+        border-radius: 50px;
+    }
+    header .menu-link ul li{
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: transparent;
+        box-shadow: none;
+        position: relative;
+    }
+    header .menu-link ul li a{
+        padding: 0;
+    }
+    header .menu-link ul li::after{
+        content: "";
+        width: 0%;
+        height: 2px;
+        border-radius: 2px;
+        position: absolute;
+        bottom: -5px;
+        background-color: var(--vang);
+        opacity: 0;
+        transition: all 0.5s;
+    }
+    header .menu-link ul li:hover::after{
+        opacity: 1;
+        width: 100%;
+        background-color: red;
+    }
+
+    header .menu-link ul li a span{
+        font-size: 15px;
+        color: var(--vang);
+        transition: color .5s;
+    }
+    header .menu-link ul li a:hover span{
+        color: red;
+    }
+    header+* {
+        margin-top: 0px;
+    }
+    .play iframe {
+        width: 100%;
+    }
+
+    .allfilm {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
+    display: none;
+}
