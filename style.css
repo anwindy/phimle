@@ -215,10 +215,10 @@ header .menu-link{
     z-index: 10;
 }
 header .menu-link ul{
-   padding:  20px;
+   padding: 10px 20px;
 }
 header .menu-link ul li{
-    margin-top: 20px;
+    margin-top: 15px;
     /* padding: 10px; */
    
     background: linear-gradient(138deg,#4f10a1,hsl(288, 85%, 28%));
