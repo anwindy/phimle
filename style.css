@@ -65,7 +65,7 @@ a {
     font-weight: 700;
     transition: all .5s;
 }
-.linkplay .link .active::after, .linkplay .link a:hover:after{
+.linkplay .link .active::after, .linkplay .link a:hover::after{
     opacity: 1;
     width: 110%;
     height: 110%;
@@ -163,6 +163,7 @@ header .home::before{
     font-weight: 800;
     left:calc(100% + 60%) ;
     transition: all .5s;
+    display: none;
 }
 header .home:hover::before{
     color: #ededed;
@@ -201,16 +202,14 @@ header .menu-link{
     background: linear-gradient(0deg,rgb(51, 5, 86),hsl(274, 89%, 21%));
     height: 100vh;
     width: 100%;
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    transition: all 0.2s;
+    transition: all 0.3s;
     position: absolute;
-    right: -100%;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 }
 
 .show-menu .menu-link{
+  
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    position: relative;
-    right :0;
 }
 .show-menu header{
     z-index: 10;
@@ -225,21 +224,28 @@ header .menu-link ul li{
     background: linear-gradient(138deg,#4f10a1,hsl(288, 85%, 28%));
     border-radius: 50px;
     box-shadow: 0px 5px 10px #431c72a4;
-    border: solid 1px var(--vang);
+    /* border: solid 1px var(--vang); */
+    transition: all .2s;
 }
 header .menu-link ul li a{
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 10px;
+    padding: 15px;
     /* background-color: #000000; */
 }
 header .menu-link ul li span{
     font-size: 16px;
     font-weight: 700;
     color: var(--vang);
+    transition: all 0.5s;
 }
-
+header .menu-link ul li:hover{
+     border: solid 2px var(--vang);
+}
+header .menu-link ul li a:hover span{
+        color: red;
+}
 header+* {
     margin-top: 90px;
 }
@@ -291,6 +297,47 @@ header+* {
     text-align: right;
     padding-bottom: 50px;
 }
+.main .thap{
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.main .thap a{
+    background: linear-gradient(8deg,#2c177f,hsl(294, 73%, 29%));
+    width: 22%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px 0;
+    transition: all .5s;
+    position: relative;
+    box-shadow: 0px 2px 10px #1c033aa4;
+}
+.main .thap .chon{
+    border: solid 2px var(--vang);
+    background: linear-gradient(8deg,#2d10a1,hsl(294, 85%, 28%));
+    
+}
+.main .thap a p{
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    font-weight: 900;
+    color: #707070;
+    transition: .5s;
+}
+.main .thap .chon p{
+    color: var(--vang);
+}
+.main .thap a:hover{
+    background: linear-gradient(8deg,#2d10a1,hsl(294, 85%, 28%));
+}
+.main .thap a:hover p{
+    color: var(--vang);
+}
+
 
 
 .main .sever{
@@ -489,7 +536,6 @@ footer p {
 .thanbai div, .noidungdht div {
     display: flex;
     justify-content: center;
-    background-color: var();
 }
 
 .thanbai img {
@@ -519,7 +565,12 @@ footer p {
 
 
 
-
+@media screen and (min-width :360px){
+    header .home::before{
+       
+       display: flex;
+    }
+}
 
 @media screen and (min-width :600px) {
     .play iframe {
@@ -612,7 +663,9 @@ footer p {
         width: 100%;
         background-color: red;
     }
-
+    header .menu-link ul li:hover{
+        border: none;
+    }
     header .menu-link ul li a span{
         font-size: 15px;
         color: var(--vang);
