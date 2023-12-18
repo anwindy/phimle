@@ -91,7 +91,7 @@ header {
     z-index: 20;
 }
 header .main-header{
-    max-width: 920px;
+    max-width: 1100px;
     margin: 0 auto ;
 }
 header .main-header .top-header{
@@ -253,7 +253,7 @@ header+* {
 
 .main {
     padding: 40px 20px;
-    max-width: 920px;
+    max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -374,7 +374,7 @@ header+* {
 }
 /* --------------------------------------------------------- */
 .gtdht {
-    max-width: 920px;
+    max-width: 1100px;
     margin-right: auto;
     margin-left: auto;
     padding: 20px;
@@ -434,7 +434,7 @@ header+* {
     gap: 10px;
     padding: 10px;
     padding-bottom: 80px;
-    max-width: 920px;
+    max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -518,7 +518,7 @@ footer p {
 }
 
 .thanbai {
-    max-width: 920px;
+    max-width: 1100px;
     padding: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -550,7 +550,7 @@ footer p {
 }
 
 .tieudeth {
-    max-width: 920px;
+    max-width: 1100px;
     /* background-color: aqua; */
     padding: 10px;
     margin-left: auto;
@@ -667,7 +667,7 @@ footer p {
         border: none;
     }
     header .menu-link ul li a span{
-        font-size: 15px;
+        font-size: 17px;
         color: var(--vang);
         transition: color .5s;
     }
@@ -683,6 +683,7 @@ footer p {
 
     .allfilm {
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 20px;
     }
 }
 img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
